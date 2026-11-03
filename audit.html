@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Book a digital marketing audit with On Top Marketing. Tell us about your company, platforms, and goals.">
+  <title>Book a Digital Marketing Audit — On Top Marketing</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111;
+      --muted: #6b6868;
+      --paper: #f7f5f3;
+      --red: #ef343a;
+      --red-deep: #b81428;
+      --line: rgba(17,17,17,.12);
+      --content: 1180px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(var(--content),calc(100% - 48px)); margin-inline: auto; }
+    .header { position: sticky; z-index: 20; top: 0; background: rgba(247,245,243,.92); border-bottom: 1px solid rgba(17,17,17,.07); backdrop-filter: blur(16px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: .95rem; font-weight: 900; letter-spacing: -.045em; }
+    .brand-logo { display: block; width: 150px; height: 58px; object-fit: contain; mix-blend-mode: multiply; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a, .footer-links a { color: #4c4949; font-size: .84rem; font-weight: 650; }
+    .nav-links a:hover, .footer-links a:hover { color: var(--red-deep); }
+    .nav-cta, .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--ink); color: white; font-size: .85rem; font-weight: 750; cursor: pointer; transition: transform .2s ease,background .2s ease; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: var(--red-deep); }
+    .nav-cta.audit-cta { background: linear-gradient(120deg,#b81428,#ed343d 64%,#f45b4b); }
+    .menu-toggle { display: none; }
+    .hero { position: relative; overflow: hidden; padding: 68px 0 62px; background: radial-gradient(ellipse at 87% 14%,rgba(255,117,97,.44),transparent 34%),linear-gradient(125deg,#a90f28 0%,#e52336 47%,#f24a41 100%); background-size: 140% 140%; color: white; animation: gradient-drift 12s ease-in-out infinite alternate; }
+    @property --hero-shade { syntax: "<number>"; inherits: false; initial-value: .8; }
+    .hero::before { position: absolute; z-index: 0; inset: 0; background: linear-gradient(rgba(0,0,0,var(--hero-shade,.8)),rgba(0,0,0,var(--hero-shade,.8))),url("img/pexels-ninthgrid-2149521550-30678207.jpg") center / cover no-repeat; content: ""; pointer-events: none; transition: --hero-shade .25s ease; }
+    .hero::after { position: absolute; top: -190px; right: -120px; width: 620px; height: 620px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 54px rgba(255,255,255,.035),0 0 0 110px rgba(255,255,255,.025); content: ""; pointer-events: none; animation: orbit-drift 18s ease-in-out infinite alternate; }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero .cursor-ash-text { color: transparent; background-image: radial-gradient(circle 72px at var(--ash-x,50%) var(--ash-y,50%),rgba(176,181,185,var(--ash-opacity,0)) 0%,rgba(176,181,185,var(--ash-opacity,0)) 35%,transparent 75%),linear-gradient(#fff,#fff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 17px; color: rgba(255,255,255,.82); font-size: .73rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; animation: rise-in .65s both; }
+    .eyebrow::before { width: 20px; height: 2px; background: currentColor; content: ""; }
+    h1 { max-width: 860px; margin: 0; font-size: clamp(2.8rem,7vw,5.6rem); font-weight: 850; letter-spacing: -.075em; line-height: .96; animation: rise-in .75s .12s both; }
+    .hero-copy { max-width: 650px; margin: 20px 0 0; color: rgba(255,255,255,.85); font-size: 1rem; line-height: 1.7; animation: rise-in .75s .24s both; }
+    main { padding: 56px 0 90px; }
+    .form-layout { display: grid; grid-template-columns: 1fr; align-items: start; }
+    .audit-form { padding: clamp(24px,4vw,42px); border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: 0 16px 50px rgba(32,12,12,.06); animation: rise-in .8s .18s both; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+    .field { display: flex; flex-direction: column; gap: 8px; animation: rise-in .55s both; }
+    .field:nth-child(1) { animation-delay: .26s; }
+    .field:nth-child(2) { animation-delay: .32s; }
+    .field:nth-child(3) { animation-delay: .38s; }
+    .field:nth-child(4) { animation-delay: .44s; }
+    .field:nth-child(5) { animation-delay: .5s; }
+    .field:nth-child(6) { animation-delay: .56s; }
+    .field:nth-child(7) { animation-delay: .62s; }
+    .field:nth-child(8) { animation-delay: .68s; }
+    .field-full { grid-column: 1 / -1; }
+    label, legend { color: #272323; font-size: .84rem; font-weight: 750; }
+    .required { color: var(--red-deep); }
+    input, select, textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 14px;
+      border: 1px solid rgba(17,17,17,.17);
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      transition: border-color .2s ease,box-shadow .2s ease;
+    }
+    textarea { min-height: 135px; resize: vertical; line-height: 1.6; }
+    input:focus, select:focus, textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,52,58,.12); }
+    fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+    fieldset legend { margin-bottom: 13px; }
+    .checkbox-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+    .check-option { display: flex; min-height: 44px; align-items: center; gap: 9px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; color: #484343; font-size: .81rem; font-weight: 600; cursor: pointer; transition: border-color .2s ease,background .2s ease,transform .2s ease; }
+    .check-option:hover { transform: translateY(-2px); border-color: rgba(184,20,40,.35); background: #fff8f8; }
+    .check-option input { width: 17px; min-height: 17px; height: 17px; flex: 0 0 17px; margin: 0; accent-color: var(--red-deep); }
+    .platform-hint { margin: 10px 0 0; color: var(--muted); font-size: .77rem; }
+    .submit-row { display: flex; align-items: center; gap: 16px; margin-top: 25px; }
+    .submit-button { min-height: 54px; padding-inline: 23px; background: linear-gradient(120deg,#b81428,#ed343d 64%,#f45b4b); }
+    .submit-button:hover { background: var(--red-deep); }
+    .submit-button:disabled { cursor: wait; opacity: .7; transform: none; }
+    .submit-status { margin: 0; color: var(--muted); font-size: .81rem; line-height: 1.5; }
+    .submit-status a { color: var(--red-deep); font-weight: 700; text-decoration: underline; }
+    .footer { padding: 28px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer p { margin: 0; color: var(--muted); font-size: .78rem; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: .8rem; }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradient-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+    @keyframes orbit-drift { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(-22px,18px,0) rotate(12deg); } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 18px; }
+      .nav-cta { padding-inline: 14px; font-size: .78rem; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(var(--content),calc(100% - 36px)); }
+      .nav { min-height: 68px; }
+      .nav-cta { display: none; }
+      .menu-toggle { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+      .nav-links { position: absolute; top: 68px; right: 18px; left: 18px; display: none; align-items: stretch; gap: 0; padding: 8px 18px; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 18px 45px rgba(0,0,0,.1); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .nav-links a:last-child { border-bottom: 0; }
+      .hero { padding: 52px 0; }
+      main { padding: 40px 0 68px; }
+      .form-grid { grid-template-columns: 1fr; gap: 17px; }
+      .field-full { grid-column: auto; }
+      .checkbox-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .submit-row { align-items: stretch; flex-direction: column; }
+      .submit-button { width: 100%; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="On Top Marketing home">
+        <img class="brand-logo" src="img/images%20(2).jpeg" alt="On Top Global Concepts Ltd.">
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#services">What we do</a>
+        <a href="index.html#work">Our work</a>
+        <a href="contact.html">Contact</a>
+        <a href="#audit-form">Book a Digital Marketing Audit</a>
+      </div>
+      <a class="nav-cta audit-cta" href="#audit-form">Book a Digital Marketing Audit</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">A clearer view of your next move</p>
+        <h1 class="cursor-ash-text">Book a Digital<br>Marketing Audit.</h1>
+        <p class="hero-copy cursor-ash-text">Tell us a little about your company, current platforms, and goals. Our team will use the details to start a focused conversation about your marketing.</p>
+      </div>
+    </section>
+    <section class="wrap form-layout" id="audit-form">
+      <form class="audit-form" id="audit-request" action="https://formspree.io/f/xjyypnrw" method="POST">
+        <input type="hidden" name="_subject" value="New Digital Marketing Audit Request">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Name <span class="required">*</span></label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company name <span class="required">*</span></label>
+            <input id="company" name="company_name" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="role">Role in organization <span class="required">*</span></label>
+            <select id="role" name="role" required>
+              <option value="">Select your role</option>
+              <option>Owner / Founder</option>
+              <option>Director / Executive</option>
+              <option>Marketing manager</option>
+              <option>Marketing team member</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number <span class="required">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address <span class="required">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field field-full">
+            <label for="budget">Annual marketing budget <span class="required">*</span></label>
+            <select id="budget" name="annual_marketing_budget" required>
+              <option value="">Select a budget range</option>
+              <option>$500–$1,500</option>
+              <option>$2,000–$4,000</option>
+              <option>$5,000–$10,000</option>
+              <option>$10,000–$50,000</option>
+              <option>$50,000–$100,000</option>
+              <option>$100,000–$500,000</option>
+              <option>$500,000–$1,000,000</option>
+            </select>
+          </div>
+          <fieldset class="field field-full" id="platforms-field">
+            <legend>Active digital media platforms <span class="required">*</span></legend>
+            <div class="checkbox-grid">
+              <label class="check-option"><input type="checkbox" name="platforms" value="Facebook">Facebook</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="Instagram">Instagram</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="LinkedIn">LinkedIn</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="TikTok">TikTok</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="YouTube">YouTube</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="X">X</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="Website / blog">Website / blog</label>
+              <label class="check-option"><input type="checkbox" name="platforms" value="Other">Other</label>
+            </div>
+            <p class="platform-hint">Select all that apply.</p>
+          </fieldset>
+          <div class="field field-full">
+            <label for="goals">Marketing goals <span class="required">*</span></label>
+            <textarea id="goals" name="marketing_goals" placeholder="What are you hoping to achieve with your marketing?" required></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="button submit-button" type="submit">Request my audit <span aria-hidden="true">↗</span></button>
+          <p class="submit-status" id="submit-status" role="status" aria-live="polite">Your request will be sent directly to our team.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html" aria-label="On Top Marketing home"><img class="brand-logo" src="img/images%20(2).jpeg" alt="On Top Global Concepts Ltd."></a>
+      <p>© <span id="year"></span> On Top Marketing. All rights reserved.</p>
+      <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+  <script>
+    const auditHero = document.querySelector(".hero");
+    if (auditHero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      auditHero.addEventListener("pointermove", (event) => {
+        if (event.pointerType === "touch") return;
+        const bounds = auditHero.getBoundingClientRect();
+        const horizontalDistance = Math.abs((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+        const verticalDistance = Math.abs((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+        const pointerDistance = Math.min(1, Math.hypot(horizontalDistance, verticalDistance) / Math.SQRT2);
+        const shadeOpacity = 0.8 + pointerDistance * 0.2;
+        auditHero.style.setProperty("--hero-shade", shadeOpacity.toFixed(2));
+      });
+      auditHero.addEventListener("pointerleave", () => {
+        auditHero.style.removeProperty("--hero-shade");
+      });
+    }
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll(".cursor-ash-text").forEach((text) => {
+        text.addEventListener("pointerenter", (event) => {
+          if (event.pointerType !== "touch") text.style.setProperty("--ash-opacity", ".9");
+        });
+        text.addEventListener("pointermove", (event) => {
+          if (event.pointerType === "touch") return;
+          const bounds = text.getBoundingClientRect();
+          const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+          const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+          text.style.setProperty("--ash-x", `${x}%`);
+          text.style.setProperty("--ash-y", `${y}%`);
+        });
+        text.addEventListener("pointerleave", () => {
+          text.style.removeProperty("--ash-opacity");
+          text.style.removeProperty("--ash-x");
+          text.style.removeProperty("--ash-y");
+        });
+      });
+    }
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const form = document.querySelector("#audit-request");
+    const platformInputs = [...form.querySelectorAll('input[name="platforms"]')];
+    const status = document.querySelector("#submit-status");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+
+    const updatePlatformValidity = () => {
+      const hasPlatform = platformInputs.some((input) => input.checked);
+      platformInputs[0].setCustomValidity(hasPlatform ? "" : "Select at least one active platform.");
+    };
+
+    platformInputs.forEach((input) => input.addEventListener("change", updatePlatformValidity));
+    updatePlatformValidity();
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      updatePlatformValidity();
+      if (!form.reportValidity()) return;
+
+      submitButton.disabled = true;
+      status.textContent = "Sending your audit request…";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) {
+          let message = "We couldn’t send your request. Please try again.";
+          try {
+            const result = await response.json();
+            if (Array.isArray(result.errors) && result.errors.length) {
+              message = result.errors.map((error) => error.message).join(" ");
+            }
+          } catch {
+            // Keep the user-facing message useful when the provider returns no JSON.
+          }
+          status.textContent = message;
+          return;
+        }
+
+        form.reset();
+        updatePlatformValidity();
+        status.textContent = "Thanks! Your audit request has been sent to our team. We’ll be in touch soon.";
+      } catch {
+        status.textContent = "We couldn’t connect to submit your request. Please check your connection and try again.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

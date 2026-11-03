@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Contact On Top Marketing in Nigeria and South Africa by phone or email.">
+  <title>Contact On Top Marketing</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111;
+      --muted: #6b6868;
+      --paper: #f7f5f3;
+      --red: #ef343a;
+      --red-deep: #b81428;
+      --line: rgba(17,17,17,.12);
+      --content: 1180px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .header { position: sticky; z-index: 20; top: 0; background: rgba(247,245,243,.92); border-bottom: 1px solid rgba(17,17,17,.07); backdrop-filter: blur(16px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: .95rem; font-weight: 900; letter-spacing: -.045em; }
+    .brand-logo { display: block; width: 150px; height: 58px; object-fit: contain; mix-blend-mode: multiply; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a, .footer-links a { color: #4c4949; font-size: .86rem; font-weight: 650; }
+    .nav-links a:hover, .footer-links a:hover { color: var(--red-deep); }
+    .nav-cta, .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border-radius: 999px; background: var(--ink); color: white; font-size: .85rem; font-weight: 750; transition: transform .2s ease, background .2s ease; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: var(--red-deep); }
+    .nav-cta.audit-cta { background: linear-gradient(120deg,#b81428,#ed343d 64%,#f45b4b); }
+    .menu-toggle { display: none; }
+    .hero { position: relative; overflow: hidden; padding: 76px 0 70px; background: radial-gradient(ellipse at 87% 14%,rgba(255,117,97,.44),transparent 34%),linear-gradient(125deg,#a90f28 0%,#e52336 47%,#f24a41 100%); color: white; }
+    .hero::after { position: absolute; top: -190px; right: -120px; width: 620px; height: 620px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 54px rgba(255,255,255,.035),0 0 0 110px rgba(255,255,255,.025); content: ""; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: .73rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { width: 20px; height: 2px; background: currentColor; content: ""; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(3rem,8vw,6.6rem); font-weight: 850; letter-spacing: -.08em; line-height: .92; }
+    .hero p:last-child { max-width: 520px; margin: 24px 0 0; color: rgba(255,255,255,.84); font-size: 1.02rem; line-height: 1.75; }
+    main { padding: 0; }
+    #offices { padding: 76px 0 96px; }
+    .intro { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 35px; }
+    .intro h2 { margin: 0; font-size: clamp(2.2rem,4vw,3.8rem); letter-spacing: -.065em; line-height: 1; }
+    .intro p { max-width: 340px; margin: 0; color: var(--muted); line-height: 1.7; }
+    .office-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+    .office-card { padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: #fff; transition: transform .25s ease,box-shadow .25s ease; }
+    .office-card:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(32,12,12,.08); }
+    .office-label { display: inline-flex; align-items: center; gap: 9px; color: var(--red-deep); font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .office-label::before { width: 8px; height: 8px; border-radius: 50%; background: var(--red); content: ""; }
+    .office-card h3 { margin: 22px 0 11px; font-size: 1.55rem; letter-spacing: -.045em; }
+    .address { min-height: 54px; margin: 0 0 25px; color: var(--muted); font-size: .98rem; line-height: 1.7; }
+    .detail { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .detail + .detail { margin-top: 19px; padding-top: 19px; }
+    .detail-label { color: #8a8583; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .detail a { width: fit-content; color: var(--ink); font-size: .94rem; font-weight: 700; line-height: 1.55; overflow-wrap: anywhere; }
+    .detail a:hover { color: var(--red-deep); }
+    .email-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 28px; margin-top: 18px; padding: 29px 32px; border-radius: 22px; background: #171515; color: white; }
+    .email-panel h2 { margin: 0 0 7px; font-size: 1.35rem; letter-spacing: -.04em; }
+    .email-panel p { margin: 0; color: #c0b9b8; font-size: .88rem; line-height: 1.6; }
+    .email-links { display: flex; flex-direction: column; gap: 10px; }
+    .email-links a { color: white; font-size: .9rem; font-weight: 700; }
+    .email-links a:hover { color: #ff9a91; }
+    .footer { padding: 28px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer p { margin: 0; color: var(--muted); font-size: .78rem; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: .8rem; }
+    @media (max-width: 800px) {
+      .hero { padding: 64px 0; }
+      .intro { align-items: start; flex-direction: column; }
+      .intro p { max-width: 520px; }
+      .office-card { padding: 25px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(var(--content),calc(100% - 36px)); }
+      .nav { min-height: 68px; }
+      .nav-cta { display: none; }
+      .menu-toggle { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+      .nav-links { position: absolute; top: 68px; right: 18px; left: 18px; display: none; align-items: stretch; gap: 0; padding: 8px 18px; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 18px 45px rgba(0,0,0,.1); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .nav-links a:last-child { border-bottom: 0; }
+      .hero { padding: 55px 0; }
+      #offices { padding: 60px 0 72px; }
+      .office-grid { grid-template-columns: 1fr; }
+      .address { min-height: auto; }
+      .email-panel { grid-template-columns: 1fr; padding: 25px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="On Top Marketing home">
+        <img class="brand-logo" src="img/images%20(2).jpeg" alt="On Top Global Concepts Ltd.">
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#services">What we do</a>
+        <a href="index.html#work">Our work</a>
+        <a href="index.html#about">About us</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="audit.html">Book a Digital Marketing Audit</a>
+      </div>
+      <a class="nav-cta audit-cta" href="audit.html">Book a Digital Marketing Audit <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Let’s make your next move</p>
+        <h1>Let’s talk<br>about growth.</h1>
+        <p>Connect with our team in Nigeria or South Africa. We’d love to hear what you’re building and how we can help.</p>
+      </div>
+    </section>
+    <section class="wrap" id="offices" aria-labelledby="office-heading">
+      <div class="intro">
+        <h2 id="office-heading">Reach out<br>to our team.</h2>
+        <p>Reach us at the office nearest you, give us a call, or send an email. We look forward to hearing from you.</p>
+      </div>
+      <div class="office-grid">
+        <article class="office-card">
+          <span class="office-label">Nigeria office</span>
+          <h3>Lagos, Nigeria</h3>
+          <p class="address">Plot 45 Akinwole Street<br>Off Buba Marwa Way<br>Satellite Town, Lagos</p>
+          <div class="detail">
+            <span class="detail-label">Call our Nigeria team</span>
+            <a href="tel:+2348062258638">+234 806 225 8638</a>
+            <a href="tel:+2349124073958">+234 912 407 3958</a>
+          </div>
+        </article>
+        <article class="office-card">
+          <span class="office-label">South Africa office</span>
+          <h3>Midrand, South Africa</h3>
+          <p class="address">24 Everfair Avenue<br>Randjesfontein<br>Midrand, 1683</p>
+          <div class="detail">
+            <span class="detail-label">Call our South Africa team</span>
+            <a href="tel:+27100010122">+27 (010) 001 0122</a>
+          </div>
+        </article>
+      </div>
+      <div class="email-panel">
+        <div>
+          <h2>Prefer email?</h2>
+          <p>Send us a note and our team will be in touch.</p>
+        </div>
+        <div class="email-links">
+          <a href="mailto:hello@ontopmarketing.com">hello@ontopmarketing.com</a>
+          <a href="mailto:ontopglobalconcepts@gmail.com">ontopglobalconcepts@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html" aria-label="On Top Marketing home"><img class="brand-logo" src="img/images%20(2).jpeg" alt="On Top Global Concepts Ltd."></a>
+      <p>© <span id="year"></span> On Top Marketing. All rights reserved.</p>
+      <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="contact.html" aria-current="page">Contact</a></div>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
