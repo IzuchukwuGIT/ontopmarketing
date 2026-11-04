@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
   <meta name="description" content="Contact On Top Marketing in Nigeria and South Africa by phone or email.">
-  <title>Contact On Top Marketing</title>
+  <title>On Top Marketing- Nigeria's Foremost Digital Marketing Company</title>
   <style>
     :root {
       color-scheme: light;
@@ -21,6 +21,9 @@
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .office-card.reveal:nth-child(2) { transition-delay: .12s; }
     .header { position: sticky; z-index: 20; top: 0; background: rgba(247,245,243,.92); border-bottom: 1px solid rgba(17,17,17,.07); backdrop-filter: blur(16px); }
     .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: inline-flex; align-items: center; gap: 11px; font-size: .95rem; font-weight: 900; letter-spacing: -.045em; }
@@ -90,7 +93,8 @@
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -102,7 +106,7 @@
       </a>
       <div class="nav-links" id="nav-links">
         <a href="index.html#services">What we do</a>
-        <a href="index.html#work">Our work</a>
+        <a href="index.html#work">Projects</a>
         <a href="index.html#about">About us</a>
         <a href="contact.html" aria-current="page">Contact</a>
         <a href="audit.html">Book a Digital Marketing Audit</a>
@@ -113,19 +117,19 @@
   </header>
   <main>
     <section class="hero">
-      <div class="wrap hero-inner">
+      <div class="wrap hero-inner reveal">
         <p class="eyebrow">Let’s make your next move</p>
         <h1>Let’s talk<br>about growth.</h1>
         <p>Connect with our team in Nigeria or South Africa. We’d love to hear what you’re building and how we can help.</p>
       </div>
     </section>
     <section class="wrap" id="offices" aria-labelledby="office-heading">
-      <div class="intro">
+      <div class="intro reveal">
         <h2 id="office-heading">Reach out<br>to our team.</h2>
         <p>Reach us at the office nearest you, give us a call, or send an email. We look forward to hearing from you.</p>
       </div>
       <div class="office-grid">
-        <article class="office-card">
+        <article class="office-card reveal">
           <span class="office-label">Nigeria office</span>
           <h3>Lagos, Nigeria</h3>
           <p class="address">Plot 45 Akinwole Street<br>Off Buba Marwa Way<br>Satellite Town, Lagos</p>
@@ -135,7 +139,7 @@
             <a href="tel:+2349124073958">+234 912 407 3958</a>
           </div>
         </article>
-        <article class="office-card">
+        <article class="office-card reveal">
           <span class="office-label">South Africa office</span>
           <h3>Midrand, South Africa</h3>
           <p class="address">24 Everfair Avenue<br>Randjesfontein<br>Midrand, 1683</p>
@@ -145,7 +149,7 @@
           </div>
         </article>
       </div>
-      <div class="email-panel">
+      <div class="email-panel reveal">
         <div>
           <h2>Prefer email?</h2>
           <p>Send us a note and our team will be in touch.</p>
@@ -161,7 +165,7 @@
     <div class="wrap footer-inner">
       <a class="brand" href="index.html" aria-label="On Top Marketing home"><img class="brand-logo" src="img/images%20(2).jpeg" alt="On Top Global Concepts Ltd."></a>
       <p>© <span id="year"></span> On Top Marketing. All rights reserved.</p>
-      <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="contact.html" aria-current="page">Contact</a></div>
+      <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#work">Projects</a><a href="contact.html" aria-current="page">Contact</a></div>
     </div>
   </footer>
   <script>
@@ -182,6 +186,21 @@
         menuToggle.setAttribute("aria-label", "Open navigation menu");
       }
     });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
 
     document.querySelector("#year").textContent = new Date().getFullYear();
   </script>
